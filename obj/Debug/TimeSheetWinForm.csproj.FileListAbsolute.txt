@@ -1,0 +1,14 @@
+C:\Users\huy11\source\repos\TimeSheetWinForm\obj\Debug\TimeSheetWinForm.csprojAssemblyReference.cache
+C:\Users\huy11\source\repos\TimeSheetWinForm\obj\Debug\TimeSheetWinForm.Properties.Resources.resources
+C:\Users\huy11\source\repos\TimeSheetWinForm\obj\Debug\TimeSheetWinForm.csproj.GenerateResource.cache
+C:\Users\huy11\source\repos\TimeSheetWinForm\bin\Debug\TimeSheetWinForm.exe.config
+C:\Users\huy11\source\repos\TimeSheetWinForm\bin\Debug\TimeSheetWinForm.exe
+C:\Users\huy11\source\repos\TimeSheetWinForm\bin\Debug\TimeSheetWinForm.pdb
+C:\Users\huy11\source\repos\TimeSheetWinForm\bin\Debug\EntityFramework.dll
+C:\Users\huy11\source\repos\TimeSheetWinForm\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\huy11\source\repos\TimeSheetWinForm\bin\Debug\EntityFramework.xml
+C:\Users\huy11\source\repos\TimeSheetWinForm\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\huy11\source\repos\TimeSheetWinForm\obj\Debug\TimeSheetWinForm.csproj.CopyComplete
+C:\Users\huy11\source\repos\TimeSheetWinForm\obj\Debug\TimeSheetWinForm.exe
+C:\Users\huy11\source\repos\TimeSheetWinForm\obj\Debug\TimeSheetWinForm.pdb
+C:\Users\huy11\source\repos\TimeSheetWinForm\obj\Debug\TimeSheetWinForm.Migrations.test.resources
