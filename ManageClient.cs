@@ -16,6 +16,7 @@ namespace TimeSheetWinForm
         {
             InitializeComponent();
             //hello day la vi du khi commit va push code
+            //xin chao 
         }
     }
 }
