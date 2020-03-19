@@ -15,6 +15,7 @@ namespace TimeSheetWinForm
         public ManageClient()
         {
             InitializeComponent();
+            //hello day la vi du khi commit va push code
         }
     }
 }
