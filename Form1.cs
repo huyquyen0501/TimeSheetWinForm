@@ -63,6 +63,7 @@ namespace TimeSheetWinForm
                     Session.RoleNameOfUser  = TimeSheetModel.UserRole.Where(s => s.UserId == Session.UserSessionId).Select(s => s.Roles.RoleName).ToList();
                     Form2 form2 = new Form2();
                     form2.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -84,6 +85,27 @@ namespace TimeSheetWinForm
         {
             
             textBox2.PasswordChar = '@';
+        }
+
+        private void button1_Enter(object sender, EventArgs e)
+        {
+            //button1.Click += button1_Click;
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
         }
     }
 }

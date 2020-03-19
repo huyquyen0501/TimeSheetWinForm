@@ -24,6 +24,9 @@ namespace TimeSheetWinForm
         #endregion
         private void Form2_Load(object sender, EventArgs e)
         {
+            /*this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;*/
             label1.Text = $"Xin chào {Session.Name}";
             button1.Enabled = false;
             button2.Enabled = false;
@@ -136,6 +139,11 @@ namespace TimeSheetWinForm
             ManageTimesheetStatic manageTimesheetStatic = new ManageTimesheetStatic();
             manageTimesheetStatic.MdiParent = this;
             manageTimesheetStatic.Show();
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(1);
         }
     }
 }

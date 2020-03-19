@@ -42,6 +42,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(268, 22);
             this.textBox1.TabIndex = 0;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // textBox2
             // 
@@ -49,6 +50,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(268, 22);
             this.textBox2.TabIndex = 1;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // label1
             // 
@@ -79,6 +81,7 @@
             this.button1.Text = "Đăng nhập";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Enter += new System.EventHandler(this.button1_Enter);
             // 
             // button2
             // 
