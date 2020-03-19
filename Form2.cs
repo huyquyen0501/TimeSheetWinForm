@@ -24,9 +24,7 @@ namespace TimeSheetWinForm
         #endregion
         private void Form2_Load(object sender, EventArgs e)
         {
-            /*this.TopMost = true;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;*/
+          
             label1.Text = $"Xin chào {Session.Name}";
             button1.Enabled = false;
             button2.Enabled = false;

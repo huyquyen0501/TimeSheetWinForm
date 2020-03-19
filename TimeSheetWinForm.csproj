@@ -162,6 +162,27 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageClient.resx">
+      <DependentUpon>ManageClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMyTimesheet.resx">
+      <DependentUpon>ManageMyTimesheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerProject.resx">
+      <DependentUpon>ManagerProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerTimesheet.resx">
+      <DependentUpon>ManagerTimesheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUser.resx">
+      <DependentUpon>ManagerUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageTask.resx">
+      <DependentUpon>ManageTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageTimesheetStatic.resx">
+      <DependentUpon>ManageTimesheetStatic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003140905080_test.resx">
       <DependentUpon>202003140905080_test.cs</DependentUpon>
     </EmbeddedResource>
