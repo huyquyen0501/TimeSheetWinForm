@@ -20,16 +20,17 @@ namespace TimeSheetWinForm.ManageProject
         private void button1_Click(object sender, EventArgs e)
         {
             AddUser addUser = new AddUser();
+            addUser.ProjectId = ProjectID;
             addUser.Show();
         }
         #region ProjectID
         public static TimeSheetModel TimeSheetModel = new TimeSheetModel();
-        static long ProjectID = (TimeSheetModel.Projects.Max(s => s.Id) + 1);
+        public static long ProjectID = (TimeSheetModel.Projects.Max(s => s.Id) + 1);
         #endregion
         private void button2_Click(object sender, EventArgs e)
         {
             AddTask addTask = new AddTask();
-            addTask.ProjectId = ProjectID;
+            
             addTask.Show();
         }
     }

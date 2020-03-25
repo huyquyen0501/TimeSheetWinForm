@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TimeSheetWinForm.ManageProject;
 using TimeSheetWinForm.Utils;
 
 namespace TimeSheetWinForm
@@ -24,17 +25,17 @@ namespace TimeSheetWinForm
             var projectShowed = TimeSheetModel.ProjectUsers
                 .Where(s => Session.RoleNameOfUser.Contains("Admin") || Session.RoleNameOfUser.Contains("ProjectAdmin") || s.UserId == Session.UserSessionId)
                 .Select(s => s.ProjectId);
-            dataGridView1.DataSource = TimeSheetModel.Projects.Where(s=>projectShowed.Contains(s.Id))
+            dataGridView1.DataSource = TimeSheetModel.Projects.Where(s => projectShowed.Contains(s.Id))
                 .Select(s => new
-            {
-                s.Id,
-                s.Name,
-                s.Code,
-                CustomerName=s.Customer.Name,
-                s.Status,
-                s.TimeStart,
-                s.TimeEnd
-            }).OrderByDescending(s=>s.Id).ToList();
+                {
+                    s.Id,
+                    s.Name,
+                    s.Code,
+                    CustomerName = s.Customer.Name,
+                    s.Status,
+                    s.TimeStart,
+                    s.TimeEnd
+                }).OrderByDescending(s => s.Id).ToList();
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Tên Project";
             dataGridView1.Columns[2].HeaderText = "Code";
@@ -56,6 +57,16 @@ namespace TimeSheetWinForm
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+            AddNewProject addNewProject = new AddNewProject();
+            addNewProject.Show();
+
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
