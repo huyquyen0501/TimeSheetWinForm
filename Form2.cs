@@ -15,8 +15,9 @@ namespace TimeSheetWinForm
     {
         public Form2()
         {
-            this.IsMdiContainer = true;
+            
             InitializeComponent();
+            this.IsMdiContainer = true;
         }
         #region
         private static bool _exiting;
