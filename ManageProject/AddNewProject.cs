@@ -20,7 +20,7 @@ namespace TimeSheetWinForm.ManageProject
         private void button1_Click(object sender, EventArgs e)
         {
             AddUser addUser = new AddUser();
-            addUser.ProjectId = ProjectID;
+            
             addUser.Show();
         }
         #region ProjectID

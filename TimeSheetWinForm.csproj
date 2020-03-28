@@ -129,6 +129,7 @@
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageProject\Dto\ProjectTaskDto.cs" />
+    <Compile Include="ManageProject\Dto\ProjectUserDto.cs" />
     <Compile Include="ManageProject\ListStatic.cs" />
     <Compile Include="ManagerProject.cs">
       <SubType>Form</SubType>
