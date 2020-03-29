@@ -36,9 +36,10 @@ namespace TimeSheetWinForm.ManageProject
             try
             {
                 if (ListDataGridViewSource.Any(s=>s.Type=="PM")) {
-                    ProjectUser pt = new ProjectUser();
+                    
                     foreach (var a in ListDataGridViewSource)
                     {
+                        ProjectUser pt = new ProjectUser();
                         pt.ProjectId = AddNewProject.ProjectID;
                         pt.UserId = a.UserId;
                         pt.Type = a.Type == "PM" ? ProjectUserType.PM : ProjectUserType.Billable;

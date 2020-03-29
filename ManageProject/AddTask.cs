@@ -40,7 +40,8 @@ namespace TimeSheetWinForm.ManageProject
                 {
                     listTaskComboBox.Add(a);
                 }
-
+                comboBox1.DataSource = listTaskComboBox;
+                comboBox1.DisplayMember = "Name";
                 comboBox2.DataSource = Billable;
             }catch(Exception ex)
             {
@@ -131,9 +132,10 @@ namespace TimeSheetWinForm.ManageProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ProjectTask pt = new ProjectTask();
+            //ProjectTask pt = new ProjectTask();
             foreach (var a in Temped)
             {
+                ProjectTask pt = new ProjectTask();
                 pt.ProjectId = AddNewProject.ProjectID;
                 pt.TaskId = a.TaskId;
                 pt.Billable = a.Billable == "Billable" ? true : false;
@@ -144,20 +146,24 @@ namespace TimeSheetWinForm.ManageProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ProjectTaskDto pt = new ProjectTaskDto();
-            var tempedObject = Temped.Where(s => s.TaskId == long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString())).Select(s => s).FirstOrDefault();
-            foreach(var a in Temped.ToList())
+            if (Temped.Count() > 0)
             {
-                if (a == tempedObject) { Temped.Remove(a); }
+                ProjectTaskDto pt = new ProjectTaskDto();
+                var tempedObject = Temped.Where(s => s.TaskId == long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString())).Select(s => s).FirstOrDefault();
+                foreach (var a in Temped.ToList())
+                {
+                    if (a == tempedObject) { Temped.Remove(a); }
+                }
+
+                Entites.Task task = new Entites.Task
+                {
+                    Id = tempedObject.TaskId,
+                    Name = tempedObject.TaskName
+                };
+                listTaskComboBox.Add(task);
+                Loaddata();
             }
-            
-            Entites.Task task = new Entites.Task
-            {
-                Id = tempedObject.TaskId,
-                Name = tempedObject.TaskName
-            };
-            listTaskComboBox.Add(task);
-            Loaddata();
+            else { MessageBox.Show("Không có gì để xóa"); }
 
 
         }
