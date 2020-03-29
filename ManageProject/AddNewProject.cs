@@ -21,7 +21,7 @@ namespace TimeSheetWinForm.ManageProject
         private void button1_Click(object sender, EventArgs e)
         {
             AddUser addUser = new AddUser();
-            
+
             addUser.Show();
             button1.Enabled = false;
         }
@@ -40,7 +40,7 @@ namespace TimeSheetWinForm.ManageProject
         private void button2_Click(object sender, EventArgs e)
         {
             AddTask addTask = new AddTask();
-            
+
             addTask.Show();
             button2.Enabled = false;
         }
@@ -57,54 +57,57 @@ namespace TimeSheetWinForm.ManageProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //try
+            try
             {
-                if (dateTimePicker1.Value.AddDays(7) < dateTimePicker2.Value)
+                if (AddTask.listTaskAdd != null && AddUser.projectUsers != null)
                 {
-                    if (!TimeSheetModel.Projects.Any(s => s.Name == textBox1.Text))
+                    if (dateTimePicker1.Value.AddDays(7) < dateTimePicker2.Value)
                     {
-                        project.Id = ProjectID;
-                        project.Name = textBox1.Text;
-                        project.Code = textBox2.Text;
-                        project.TimeStart = dateTimePicker1.Value;
-                        project.TimeEnd = dateTimePicker2.Value;
-                        if (comboBox2.Text == "TimeAndMaterials")
-                        { project.ProjectType = StatusEnum.ProjectType.TimeAndMaterials; }
-                        else if (comboBox2.Text == "FixedFee")
+                        if (!TimeSheetModel.Projects.Any(s => s.Name == textBox1.Text))
                         {
-                            project.ProjectType = StatusEnum.ProjectType.FixedFee;
-                        }
-                        else { project.ProjectType = StatusEnum.ProjectType.NoneBillable; }
-                        project.CustomerId = TimeSheetModel.Customers.Where(s => s.Name == comboBox3.Text).Select(s => s.Id).FirstOrDefault();
-                        project.Note = richTextBox1.Text == null ? "  " : richTextBox1.Text;
-                        TimeSheetModel.Projects.Add(project);
-                        TimeSheetModel.SaveChanges();
-                        ProjectID = TimeSheetModel.Projects.Where(s => s.Name == project.Name).Select(s => s.Id).FirstOrDefault();
-                        foreach (var a in AddUser.projectUsers)
-                        {
-                            a.ProjectId = ProjectID;
-                        }
-                        foreach (var a in AddTask.listTaskAdd)
-                        {
-                            a.ProjectId = ProjectID;
-                        }
-                        //TimeSheetModel.ProjectUsers.AddRange(AddUser.projectUsers);
-                        ProjectUser pu = new ProjectUser();
-                        foreach(var a in AddUser.projectUsers)
-                        {
-                            TimeSheetModel.ProjectUsers.Add(a);
+                            project.Id = ProjectID;
+                            project.Name = textBox1.Text;
+                            project.Code = textBox2.Text;
+                            project.TimeStart = dateTimePicker1.Value;
+                            project.TimeEnd = dateTimePicker2.Value;
+                            project.Status = StatusEnum.ProjectStatus.Active;
+                            if (comboBox2.Text == "TimeAndMaterials")
+                            { project.ProjectType = StatusEnum.ProjectType.TimeAndMaterials; }
+                            else if (comboBox2.Text == "FixedFee")
+                            {
+                                project.ProjectType = StatusEnum.ProjectType.FixedFee;
+                            }
+                            else { project.ProjectType = StatusEnum.ProjectType.NoneBillable; }
+                            project.CustomerId = TimeSheetModel.Customers.Where(s => s.Name == comboBox3.Text).Select(s => s.Id).FirstOrDefault();
+                            project.Note = richTextBox1.Text == null ? "  " : richTextBox1.Text;
+                            TimeSheetModel.Projects.Add(project);
                             TimeSheetModel.SaveChanges();
+                            ProjectID = TimeSheetModel.Projects.Where(s => s.Name == project.Name).Select(s => s.Id).FirstOrDefault();
+                            foreach (var a in AddUser.projectUsers)
+                            {
+                                a.ProjectId = ProjectID;
+                            }
+                            foreach (var a in AddTask.listTaskAdd)
+                            {
+                                a.ProjectId = ProjectID;
+                            }
+                            TimeSheetModel.ProjectUsers.AddRange(AddUser.projectUsers);
+                            TimeSheetModel.ProjectTasks.AddRange(AddTask.listTaskAdd);
+                            TimeSheetModel.SaveChanges();
+                            AddUser.projectUsers.Clear();
+                            AddTask.listTaskAdd.Clear();
+                            this.Close();
                         }
-                        TimeSheetModel.ProjectTasks.AddRange(AddTask.listTaskAdd);
-                        TimeSheetModel.SaveChanges();
-                        AddUser.projectUsers.Clear();
-                        AddTask.listTaskAdd.Clear();
+                        else { MessageBox.Show("Tên project đã tồn tại"); }
                     }
+                    else { MessageBox.Show("Thời gian dự án quá ngắn"); }
                 }
-           // }catch(Exception ex)
-            //{
-            //    MessageBox.Show("Lỗi trong quá trình thêm mới project");
+                else { MessageBox.Show("Project cần thêm thành viên và Tasks"); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi trong quá trình thêm mới project");
+            }
             }
         }
-    }
-}
+    } 

@@ -37,6 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,8 +59,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Sửa";
+            this.button1.Text = "Chi tiết";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -90,7 +93,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(68, 301);
+            this.textBox1.Location = new System.Drawing.Point(68, 322);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(109, 22);
             this.textBox1.TabIndex = 5;
@@ -99,7 +102,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 301);
+            this.label1.Location = new System.Drawing.Point(12, 325);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(19, 17);
             this.label1.TabIndex = 6;
@@ -113,6 +116,7 @@
             this.button5.TabIndex = 7;
             this.button5.Text = "Active";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -122,12 +126,35 @@
             this.button6.TabIndex = 8;
             this.button6.Text = "Deactive";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(417, 319);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(116, 23);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Reload";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(198, 320);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "search";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // ManagerProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1099, 450);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label1);
@@ -158,5 +185,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

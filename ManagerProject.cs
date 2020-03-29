@@ -31,11 +31,13 @@ namespace TimeSheetWinForm
                     s.Id,
                     s.Name,
                     s.Code,
-                    CustomerName = s.Customer.Name,
+                    CustomerName = s.Customer.Name,          
                     s.Status,
                     s.TimeStart,
-                    s.TimeEnd
-                }).OrderByDescending(s => s.Id).ToList();
+                    s.TimeEnd,
+                    s.ProjectType,
+                    s.Note
+                }).OrderBy(s => s.Id).ToList();
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Tên Project";
             dataGridView1.Columns[2].HeaderText = "Code";
@@ -43,6 +45,8 @@ namespace TimeSheetWinForm
             dataGridView1.Columns[4].HeaderText = "Trạng thái project";
             dataGridView1.Columns[5].HeaderText = "Thời gian bắt đầu";
             dataGridView1.Columns[6].HeaderText = "Thời gian kết thúc";
+            dataGridView1.Columns[7].HeaderText = "Loại Project";
+            dataGridView1.Columns[8].HeaderText = "Ghi chú";
         }
         #endregion
 
@@ -67,6 +71,43 @@ namespace TimeSheetWinForm
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Loaddata();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var projectid= long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            var a = TimeSheetModel.Projects.Where(s => s.Id == projectid);
+            a.FirstOrDefault().Status = Entites.StatusEnum.ProjectStatus.Active;
+            TimeSheetModel.SaveChanges();
+            Loaddata();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var projectid = long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            var a = TimeSheetModel.Projects.Where(s => s.Id == projectid);
+            a.FirstOrDefault().Status = Entites.StatusEnum.ProjectStatus.Deactive;
+            TimeSheetModel.SaveChanges();
+            Loaddata();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
