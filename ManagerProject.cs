@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeSheetWinForm.ManageProject;
+using TimeSheetWinForm.ManageProject.DetailProject;
 using TimeSheetWinForm.Utils;
 
 namespace TimeSheetWinForm
@@ -48,6 +49,7 @@ namespace TimeSheetWinForm
             dataGridView1.Columns[7].HeaderText = "Loại Project";
             dataGridView1.Columns[8].HeaderText = "Ghi chú";
         }
+        public static long ProjectId;
         #endregion
 
         private void ManagerProject_Load(object sender, EventArgs e)
@@ -109,7 +111,27 @@ namespace TimeSheetWinForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool FormNotOpen=true;
+               FormCollection fc = Application.OpenForms;
 
+            foreach (Form frm in fc)
+            {
+                //iterate through
+                if (frm.Name == "ProjectDetail")
+                {
+                    FormNotOpen = false;
+                }
+            }
+            if (FormNotOpen)
+            {
+                ProjectId = long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                ProjectDetail projectDetail = new ProjectDetail();
+                projectDetail.Show();
+            }
+            else
+            {
+                MessageBox.Show("Form đang chạy, vui lòng đóng lại trước khi mở form mới");
+            }
         }
     }
 }
