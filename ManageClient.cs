@@ -73,9 +73,18 @@ namespace TimeSheetWinForm
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            var id = long.Parse(dgvKhachhang.SelectedCells[0].OwningRow.Cells["ID"].Value.ToString());
+            string name = txthoten.Text; //dgvKhachhang.SelectedCells[0].OwningRow.Cells["Tên_Khách_Hàng"].Value.ToString();
+            string address = txtDiaChi.Text; //dgvKhachhang.SelectedCells[0].OwningRow.Cells["Địa_chỉ"].Value.ToString();
 
+            Customer edit = TimeSheetModel.Customers.Where(p => p.Id==id).FirstOrDefault();
+            edit.Name = name;
+            edit.Address = address;
+
+            TimeSheetModel.SaveChanges();
+
+            loaddata();
         }
-
         private void dgvKhachhang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
