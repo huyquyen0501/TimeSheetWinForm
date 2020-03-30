@@ -5,3 +5,5 @@
 obj/
 bin/
 *.log
+App.config
+Properties/
