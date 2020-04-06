@@ -19,7 +19,7 @@ namespace TimeSheetWinForm.Entites
         public string  SurName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
-        public bool IsDeleted { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }
 

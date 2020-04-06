@@ -30,7 +30,7 @@ namespace TimeSheetWinForm.Entites
 
         public DateTime DateAt { get; set; }
         public int WorkingTime { get; set; }//min     
-        public bool IsDeleted { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }
 
