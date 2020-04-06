@@ -24,3 +24,4 @@ namespace TimeSheetWinForm.Entites
         public bool? IsDeleted { get; set; }
     }
 }
+

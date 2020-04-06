@@ -58,7 +58,7 @@ namespace TimeSheetWinForm
             }
             //Neu Basicuser nhung duoc lam PM cua du an thi se bat duoc cac nut manage project,managetask, timesheet nhung chi duoc phep xem du an no lam quan ly
             //(xu ly viec hien ra o  cac code cua doan sau nhe, o day chi xu ly viec bat nut)
-            if (TimeSheetModel.ProjectUsers.Any(s => s.UserId == Session.UserSessionId && s.Type == Entites.ProjectUserType.PM))
+            if (TimeSheetModel.ProjectUsers.Any(s => s.UserId == Session.UserSessionId && s.Type == ProjectUserType.PM))
             {
                 button2.Enabled = button4.Enabled = button5.Enabled = true;
             }
