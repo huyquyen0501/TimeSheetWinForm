@@ -18,5 +18,6 @@ namespace TimeSheetWinForm.Entites
         [ForeignKey(nameof(RoleId))]
         public Role Roles { get; set; }
         public long RoleId { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }

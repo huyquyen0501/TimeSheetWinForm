@@ -19,6 +19,7 @@ namespace TimeSheetWinForm.Entites
         public long ProjectId { get; set; }
 
         public ProjectUserType Type { get; set; }
+        public bool? IsDeleted { get; set; }
 
     }
 

@@ -29,6 +29,7 @@ namespace TimeSheetWinForm.Entites
         public TimesheetStatus Status { get; set; }
 
         public DateTime DateAt { get; set; }
-        public int WorkingTime { get; set; }//min     
+        public int WorkingTime { get; set; }//min    
+        public bool? IsDeleted { get; set; }
     }
 }

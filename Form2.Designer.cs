@@ -38,6 +38,13 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageProjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timesheetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -148,6 +155,51 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Xin chào người trái đất";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.userToolStripMenuItem,
+            this.manageProjectsToolStripMenuItem,
+            this.clientToolStripMenuItem,
+            this.manageTaskToolStripMenuItem,
+            this.timesheetToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1920, 28);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // userToolStripMenuItem
+            // 
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.userToolStripMenuItem.Text = "User";
+            // 
+            // manageProjectsToolStripMenuItem
+            // 
+            this.manageProjectsToolStripMenuItem.Name = "manageProjectsToolStripMenuItem";
+            this.manageProjectsToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.manageProjectsToolStripMenuItem.Text = "ManageProjects";
+            // 
+            // clientToolStripMenuItem
+            // 
+            this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
+            this.clientToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.clientToolStripMenuItem.Text = "Client";
+            // 
+            // manageTaskToolStripMenuItem
+            // 
+            this.manageTaskToolStripMenuItem.Name = "manageTaskToolStripMenuItem";
+            this.manageTaskToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.manageTaskToolStripMenuItem.Text = "ManageTask";
+            // 
+            // timesheetToolStripMenuItem
+            // 
+            this.timesheetToolStripMenuItem.Name = "timesheetToolStripMenuItem";
+            this.timesheetToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.timesheetToolStripMenuItem.Text = "Timesheet";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -163,7 +215,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Form2";
@@ -171,6 +225,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +244,11 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageProjectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageTaskToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timesheetToolStripMenuItem;
     }
 }

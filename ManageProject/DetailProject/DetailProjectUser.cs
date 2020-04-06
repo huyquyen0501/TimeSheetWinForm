@@ -44,10 +44,10 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
                 ListDataGridViewSource.Add(a);
             }
             LoadData();
-            var listcombobox1 = TimeSheetModel.User
+            var listcombobox1 = TimeSheetModel.User;
             if (ListDataGridViewSource.Count() > 0)
             {
-                comboBox1.Text=
+                //comboBox1.Text=
             }
         }
     }

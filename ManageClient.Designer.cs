@@ -60,7 +60,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(24, 314);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1031, 228);
+            this.panel1.Size = new System.Drawing.Size(970, 228);
             this.panel1.TabIndex = 5;
             // 
             // btnSua
@@ -108,10 +108,10 @@
             // dgvKhachhang
             // 
             this.dgvKhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhachhang.Location = new System.Drawing.Point(24, 13);
+            this.dgvKhachhang.Location = new System.Drawing.Point(12, 12);
             this.dgvKhachhang.Name = "dgvKhachhang";
             this.dgvKhachhang.RowTemplate.Height = 24;
-            this.dgvKhachhang.Size = new System.Drawing.Size(1031, 295);
+            this.dgvKhachhang.Size = new System.Drawing.Size(982, 282);
             this.dgvKhachhang.TabIndex = 6;
             this.dgvKhachhang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentClick);
             // 
@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1006, 553);
             this.Controls.Add(this.dgvKhachhang);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);

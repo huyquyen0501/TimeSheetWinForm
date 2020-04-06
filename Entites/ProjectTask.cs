@@ -21,5 +21,6 @@ namespace TimeSheetWinForm.Entites
         public long ProjectId { get; set; }
 
         public bool Billable { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }
