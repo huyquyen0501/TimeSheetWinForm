@@ -12,6 +12,7 @@ namespace TimeSheetWinForm.Entites
         public long Id { get; set; }
         public string Name { get; set; }
         public TaskType Type { get; set; }
-
+        public bool IsDeleted { get; set; }
     }
 }
+

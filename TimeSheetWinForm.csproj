@@ -129,6 +129,12 @@
     <Compile Include="ManageProject\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageProject\DetailProject\DetailProjectTasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageProject\DetailProject\DetailProjectTasks.Designer.cs">
+      <DependentUpon>DetailProjectTasks.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageProject\DetailProject\DetailProjectUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,10 @@
     <Compile Include="Migrations\202003140905080_test.Designer.cs">
       <DependentUpon>202003140905080_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004060902392_new.cs" />
+    <Compile Include="Migrations\202004060902392_new.designer.cs">
+      <DependentUpon>202004060902392_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Program.cs" />
@@ -211,6 +221,9 @@
     <EmbeddedResource Include="ManageProject\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageProject\DetailProject\DetailProjectTasks.resx">
+      <DependentUpon>DetailProjectTasks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageProject\DetailProject\DetailProjectUser.resx">
       <DependentUpon>DetailProjectUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003140905080_test.resx">
       <DependentUpon>202003140905080_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060902392_new.resx">
+      <DependentUpon>202004060902392_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

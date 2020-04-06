@@ -22,5 +22,6 @@ namespace TimeSheetWinForm.Entites
         [ForeignKey(nameof(CustomerId))]
         public Customer Customer { get; set; }
         public long CustomerId { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
