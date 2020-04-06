@@ -30,8 +30,17 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
         }
         void loadcombobox()
         {
-            comboBox1.Text= dataGridView1.Rows[0].Cells[1].Value.ToString();
-            comboBox2.Text= dataGridView1.Rows[0].Cells[2].Value.ToString();
+            try
+            {
+                comboBox1.DataSource = ListCombobox1Source;
+                comboBox1.DisplayMember = "UserName";
+                comboBox1.Invalidate();
+                comboBox1.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
+                comboBox2.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            }catch(Exception ex)
+            {
+
+            }
         }
         #endregion
         private void DetailProjectUser_Load(object sender, EventArgs e)
@@ -115,31 +124,92 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
         {
             try
             {
-                if (!TimeSheetModel.MyTimesheets.Any(s => s.UserId == long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString()) && s.ProjectTask.ProjectId == ManagerProject.ProjectId)) {
-
-                    var tempedObject = ListDataGridViewSource.Where(s => s.UserId == long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString())).Select(s => s).FirstOrDefault();
-                    foreach (var a in ListDataGridViewSource.ToList())
+                if (dataGridView1.RowCount > 1)
+                {
+                    var userid = long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                    if (!TimeSheetModel.MyTimesheets.Any(s => s.UserId == userid && s.ProjectTask.ProjectId == ManagerProject.ProjectId))
                     {
-                        if (a == tempedObject) { ListDataGridViewSource.Remove(a); }
+
+                        var tempedObject = ListDataGridViewSource.Where(s => s.UserId == long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString())).Select(s => s).FirstOrDefault();
+                        foreach (var a in ListDataGridViewSource.ToList())
+                        {
+                            if (a == tempedObject) { ListDataGridViewSource.Remove(a); }
+                        }
+
+                        User task = new User
+                        {
+                            Id = tempedObject.UserId,
+                            UserName = tempedObject.UserName
+                        };
+                        ListCombobox1Source.Add(task);
+                        LoadData();
+                        loadcombobox();
                     }
-
-                    User task = new User
+                    else
                     {
-                        Id = tempedObject.UserId,
-                        Name = tempedObject.UserName
-                    };
-                    ListCombobox1Source.Add(task);
-                    LoadData();
-                    loadcombobox();
+                        MessageBox.Show($"User {comboBox1.Text} had logged timesheet, can't delete");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show($"User {comboBox1.Text} had logged timesheet, can't delete");
+                    MessageBox.Show("Dự án cần ít nhất 1 thành viên");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"không thể xóa dòng không có thông tin");
+              MessageBox.Show($"không thể xóa dòng không có thông tin");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value = comboBox2.Text;
+
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value != null)
+                {
+                    comboBox1.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+                    comboBox2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Dòng không có thông tin");
+                    LoadData();
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Dự án cần ít nhất 1 người");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ListDataGridViewSource.Any(s => s.Type == "PM"))
+                {
+
+                    foreach (var a in ListDataGridViewSource)
+                    {
+                        ProjectUser pt = new ProjectUser();
+                        pt.ProjectId = AddNewProject.ProjectID;
+                        pt.UserId = a.UserId;
+                        pt.Type = a.Type == "PM" ? ProjectUserType.PM : ProjectUserType.Billable;
+                        projectUsers.Add(pt);
+                    }
+
+                    this.Close();
+                }
+                else { MessageBox.Show("Dự án cần ít nhất 1 PM, vui lòng chỉnh sửa lại"); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi");
             }
         }
     }
