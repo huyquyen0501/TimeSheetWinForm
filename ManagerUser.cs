@@ -74,21 +74,19 @@ namespace TimeSheetWinForm
         private void btnxoa_Click(object sender, EventArgs e)
         {
             var id = long.Parse(dgvuser.SelectedCells[0].OwningRow.Cells["Id"].Value.ToString());
-            //var list = TimeSheetModel.ProjectUsers.Where(s =>s.ProjectId== )
-            /*var strin = from a in TimeSheetModel.ProjectUsers
-                        from b in TimeSheetModel.Projects
-                        where a.ProjectId == b.Id
-                        select new { a.UserId, b.Id, b.TimeStart, b.TimeEnd };*/
-
-                var query = TimeSheetModel.ProjectUsers.Where(s => s.UserId == id).Select(s=>s.ProjectId);
-          //  if ()
-          //  {
-                
-         //   }
-            User delete = TimeSheetModel.User.Where(p => p.Id == id).FirstOrDefault();
-            TimeSheetModel.User.Remove(delete);
-            TimeSheetModel.SaveChanges();
-            loaddata();
+           
+            if (!TimeSheetModel.MyTimesheets.Any(s => s.UserId == id))
+            {
+                //Xoas duoc
+                User delete = TimeSheetModel.User.Where(p => p.Id == id).FirstOrDefault();
+                delete.IsDeleted = true;
+                TimeSheetModel.SaveChanges();
+                loaddata();
+            }
+            else
+            {
+                MessageBox.Show("Khong xoas duoc");
+            }     
         }
 
         private void btnmk_Click(object sender, EventArgs e)
