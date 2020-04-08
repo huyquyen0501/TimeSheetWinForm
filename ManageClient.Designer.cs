@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvKhachhang = new System.Windows.Forms.DataGridView();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachhang)).BeginInit();
             this.SuspendLayout();
@@ -46,12 +47,13 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(141, 45);
             this.btnThem.TabIndex = 4;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "Add";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.txtDiaChi);
             this.panel1.Controls.Add(this.btnThem);
@@ -69,7 +71,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(141, 45);
             this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa";
+            this.btnSua.Text = "Edit";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -92,21 +94,22 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(31, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 17);
+            this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Địa chỉ khách hàng:";
+            this.label2.Text = "Address:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(31, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 17);
+            this.label1.Size = new System.Drawing.Size(120, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Họ tên khách hàng:";
+            this.label1.Text = "Customers Name:";
             // 
             // dgvKhachhang
             // 
+            this.dgvKhachhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachhang.Location = new System.Drawing.Point(12, 12);
             this.dgvKhachhang.Name = "dgvKhachhang";
@@ -114,6 +117,16 @@
             this.dgvKhachhang.Size = new System.Drawing.Size(982, 282);
             this.dgvKhachhang.TabIndex = 6;
             this.dgvKhachhang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentClick);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(666, 147);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(141, 45);
+            this.btnLuu.TabIndex = 9;
+            this.btnLuu.Text = "Save";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // ManageClient
             // 
@@ -144,5 +157,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvKhachhang;
+        private System.Windows.Forms.Button btnLuu;
     }
 }
