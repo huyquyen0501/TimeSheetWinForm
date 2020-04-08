@@ -22,7 +22,7 @@ namespace TimeSheetWinForm
             foreach (var a in Session.RoleNameOfUser)
             {
                 if (a.Equals("Admin"))
-                    btnmk.Enabled = true; 
+                    btnmk.Enabled = true;
             }
         }
         #region
@@ -30,11 +30,15 @@ namespace TimeSheetWinForm
         #endregion
         void loaddata()
         {
-            dgvuser.DataSource = TimeSheetModel.User.Select(p=> new {p.Id, p.SurName, p.Name, p.UserName,p.DateOfBirth, p.Address}).ToList();
-            
-
+            dgvuser.DataSource = TimeSheetModel.User.Where(p=>p.IsDeleted !=true).
+                Select(p => new { p.Id, p.SurName, p.Name, p.UserName, p.DateOfBirth, p.Address }).ToList();
         }
 
+        void checkdata()
+        {
+            
+            
+        }
         private void dgvuser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
@@ -53,28 +57,39 @@ namespace TimeSheetWinForm
             form.ShowDialog();
         }
 
+
         private void btnsua_Click(object sender, EventArgs e)
         {
-            var id = long.Parse(dgvuser.SelectedCells[0].OwningRow.Cells["Id"].Value.ToString());
-            string surname = dgvuser.SelectedCells[0].OwningRow.Cells["SurName"].Value.ToString();
-            string name = dgvuser.SelectedCells[0].OwningRow.Cells["Name"].Value.ToString();
-            string birth = dgvuser.SelectedCells[0].OwningRow.Cells["DateOfBirth"].Value.ToString();
-            string address = dgvuser.SelectedCells[0].OwningRow.Cells["Address"].Value.ToString();
+            DateTime d1 = DateTime.Now;
+            if(d1.Year - dateNgaysinh.Value.Year > 18)
+            {
+                var id = long.Parse(txtid.Text);
+                string surname = txtho.Text;
+                string name =txtten.Text;
+                string birth =dateNgaysinh.Text;
+                string address = txtDiachi.Text;
 
-            User edit = TimeSheetModel.User.Where(p => p.Id == id).FirstOrDefault();
-            edit.SurName = surname;
-            edit.Name = name;
-            edit.DateOfBirth =DateTime.Parse(birth);
-            edit.Address = address;
+                User edit = TimeSheetModel.User.Where(p => p.Id == id).FirstOrDefault();
+                edit.SurName = surname;
+                edit.Name = name;
+                edit.DateOfBirth = DateTime.Parse(birth);
+                edit.Address = address;
 
-            TimeSheetModel.SaveChanges();
-            loaddata();
+                TimeSheetModel.SaveChanges();
+                loaddata();
+            }
+            else
+            {
+                MessageBox.Show("Employees must be over 18 years old");
+                dateNgaysinh.Focus();
+            }
+            
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
             var id = long.Parse(dgvuser.SelectedCells[0].OwningRow.Cells["Id"].Value.ToString());
-           
+
             if (!TimeSheetModel.MyTimesheets.Any(s => s.UserId == id))
             {
                 //Xoas duoc
@@ -85,8 +100,8 @@ namespace TimeSheetWinForm
             }
             else
             {
-                MessageBox.Show("Khong xoas duoc");
-            }     
+                MessageBox.Show("Can not delete");
+            }
         }
 
         private void btnmk_Click(object sender, EventArgs e)
@@ -97,7 +112,7 @@ namespace TimeSheetWinForm
             edit.PassWord = BCrypt.Net.BCrypt.HashPassword("1");
 
             TimeSheetModel.SaveChanges();
-            MessageBox.Show("Đã cập nhập mật khẩu mặc định là '1'");
+            MessageBox.Show("Password has changed to '1'");
             loaddata();
         }
     }
