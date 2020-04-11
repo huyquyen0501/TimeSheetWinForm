@@ -38,6 +38,8 @@
             this.txtname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvtask)).BeginInit();
             this.panel2.SuspendLayout();
@@ -60,9 +62,12 @@
             this.dgvtask.RowTemplate.Height = 24;
             this.dgvtask.Size = new System.Drawing.Size(859, 205);
             this.dgvtask.TabIndex = 0;
+            this.dgvtask.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtask_CellContentClick);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtId);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btndelete);
             this.panel2.Controls.Add(this.btnedit);
             this.panel2.Controls.Add(this.btnadd);
@@ -84,6 +89,7 @@
             this.btndelete.TabIndex = 6;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnedit
             // 
@@ -94,6 +100,7 @@
             this.btnedit.TabIndex = 5;
             this.btnedit.Text = "Edit";
             this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // btnadd
             // 
@@ -109,23 +116,23 @@
             // cbxtype
             // 
             this.cbxtype.FormattingEnabled = true;
-            this.cbxtype.Location = new System.Drawing.Point(504, 4);
+            this.cbxtype.Location = new System.Drawing.Point(681, 5);
             this.cbxtype.Name = "cbxtype";
-            this.cbxtype.Size = new System.Drawing.Size(243, 24);
+            this.cbxtype.Size = new System.Drawing.Size(175, 24);
             this.cbxtype.TabIndex = 3;
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(115, 3);
+            this.txtname.Location = new System.Drawing.Point(317, 5);
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(243, 22);
+            this.txtname.Size = new System.Drawing.Size(205, 22);
             this.txtname.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(400, 4);
+            this.label2.Location = new System.Drawing.Point(568, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 22);
             this.label2.TabIndex = 1;
@@ -135,11 +142,29 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 4);
+            this.label1.Location = new System.Drawing.Point(207, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Task Name:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 22);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "ID:";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(46, 5);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(120, 22);
+            this.txtId.TabIndex = 8;
             // 
             // ManageTask
             // 
@@ -172,5 +197,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label label3;
     }
 }
