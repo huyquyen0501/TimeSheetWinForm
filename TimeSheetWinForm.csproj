@@ -188,6 +188,10 @@
     <Compile Include="Migrations\202004060902392_new.designer.cs">
       <DependentUpon>202004060902392_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004130651353_neww.cs" />
+    <Compile Include="Migrations\202004130651353_neww.designer.cs">
+      <DependentUpon>202004130651353_neww.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Program.cs" />
@@ -250,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004060902392_new.resx">
       <DependentUpon>202004060902392_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004130651353_neww.resx">
+      <DependentUpon>202004130651353_neww.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
