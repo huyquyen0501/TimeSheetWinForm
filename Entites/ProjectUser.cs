@@ -20,12 +20,12 @@ namespace TimeSheetWinForm.Entites
 
         public ProjectUserType Type { get; set; }
         public bool? IsDeleted { get; set; }
-    }
 
-}
+    }
 
     public enum ProjectUserType
     {
         Billable = 0,
         PM = 1,
     }
+}

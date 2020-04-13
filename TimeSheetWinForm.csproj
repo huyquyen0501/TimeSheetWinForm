@@ -180,13 +180,9 @@
     <Compile Include="ManageTimesheetStatic.Designer.cs">
       <DependentUpon>ManageTimesheetStatic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003140905080_test.cs" />
-    <Compile Include="Migrations\202003140905080_test.Designer.cs">
-      <DependentUpon>202003140905080_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004060902392_new.cs" />
-    <Compile Include="Migrations\202004060902392_new.designer.cs">
-      <DependentUpon>202004060902392_new.cs</DependentUpon>
+    <Compile Include="Migrations\202004071354416_neww.cs" />
+    <Compile Include="Migrations\202004071354416_neww.designer.cs">
+      <DependentUpon>202004071354416_neww.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202004130651353_neww.cs" />
     <Compile Include="Migrations\202004130651353_neww.designer.cs">
@@ -249,11 +245,8 @@
     <EmbeddedResource Include="ManageTimesheetStatic.resx">
       <DependentUpon>ManageTimesheetStatic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003140905080_test.resx">
-      <DependentUpon>202003140905080_test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004060902392_new.resx">
-      <DependentUpon>202004060902392_new.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004071354416_neww.resx">
+      <DependentUpon>202004071354416_neww.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004130651353_neww.resx">
       <DependentUpon>202004130651353_neww.cs</DependentUpon>

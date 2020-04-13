@@ -26,7 +26,7 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
         List<string> Combobox2Source = new List<string> { "PM", "Member" };
         void LoadData()
         {
-            dataGridView1.DataSource = ListDataGridViewSource; 
+            dataGridView1.DataSource = ListDataGridViewSource;
         }
         void loadcombobox()
         {
@@ -37,7 +37,8 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
                 comboBox1.Invalidate();
                 comboBox1.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
                 comboBox2.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
 
             }
@@ -46,20 +47,21 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
         private void DetailProjectUser_Load(object sender, EventArgs e)
         {
             var list = TimeSheetModel.ProjectUsers.Where(s => s.ProjectId == ManagerProject.ProjectId)
-            .Select(s=>new ProjectUserDto{ 
-            UserId=s.UserId,
-            UserName=s.User.UserName,
-            Type=s.Type==0?"Member":"PM",
-            ProjectId=s.ProjectId
+            .Select(s => new ProjectUserDto
+            {
+                UserId = s.UserId,
+                UserName = s.User.UserName,
+                Type = s.Type == 0 ? "Member" : "PM",
+                ProjectId = s.ProjectId
             }).ToList();
-            foreach(var a in list)
+            foreach (var a in list)
             {
                 ListDataGridViewSource.Add(a);
             }
             LoadData();
             var a1 = ListDataGridViewSource.Select(t => t.UserId).ToList();
-            var listcombobox1 = TimeSheetModel.User.Where(s=>a1.Contains(s.Id)==false).ToList();
-            foreach(var a in listcombobox1)
+            var listcombobox1 = TimeSheetModel.User.Where(s => a1.Contains(s.Id) == false).ToList();
+            foreach (var a in listcombobox1)
             {
                 User user = new User();
                 user.UserName = a.UserName;
@@ -80,7 +82,7 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
             comboBox1.DataSource = ListCombobox1Source;
             comboBox1.DisplayMember = "UserName";
             comboBox1.Invalidate();
-            comboBox1.Text= dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            comboBox1.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
         }
 
         private void comboBox2_Click(object sender, EventArgs e)
@@ -114,7 +116,8 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
                     loadcombobox();
                 }
                 else { MessageBox.Show($"Nhân viên {comboBox1.Text} đã có trong dự án"); }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"{ex}");
             }
@@ -157,7 +160,7 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
             }
             catch (Exception ex)
             {
-              MessageBox.Show($"không thể xóa dòng không có thông tin");
+                MessageBox.Show($"không thể xóa dòng không có thông tin");
             }
         }
 
@@ -181,7 +184,8 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
                     MessageBox.Show("Dòng không có thông tin");
                     LoadData();
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Dự án cần ít nhất 1 người");
             }
