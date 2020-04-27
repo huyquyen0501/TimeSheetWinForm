@@ -36,6 +36,8 @@
             this.dtstart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbxtaskname = new System.Windows.Forms.ComboBox();
             this.txtnote = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.checkischarged = new System.Windows.Forms.CheckBox();
@@ -50,8 +52,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnapprove = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
-            this.cbxtaskname = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmytimesheet)).BeginInit();
             this.panel2.SuspendLayout();
@@ -75,6 +75,7 @@
             this.dgvmytimesheet.RowTemplate.Height = 24;
             this.dgvmytimesheet.Size = new System.Drawing.Size(975, 226);
             this.dgvmytimesheet.TabIndex = 0;
+            this.dgvmytimesheet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvmytimesheet_CellContentClick);
             // 
             // panel2
             // 
@@ -138,6 +139,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(975, 106);
             this.panel3.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(289, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 17);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Task Name:";
+            // 
+            // cbxtaskname
+            // 
+            this.cbxtaskname.FormattingEnabled = true;
+            this.cbxtaskname.Location = new System.Drawing.Point(392, 3);
+            this.cbxtaskname.Name = "cbxtaskname";
+            this.cbxtaskname.Size = new System.Drawing.Size(143, 24);
+            this.cbxtaskname.TabIndex = 15;
             // 
             // txtnote
             // 
@@ -251,6 +269,7 @@
             this.btnapprove.TabIndex = 1;
             this.btnapprove.Text = "Approve";
             this.btnapprove.UseVisualStyleBackColor = true;
+            this.btnapprove.Click += new System.EventHandler(this.btnapprove_Click);
             // 
             // btnadd
             // 
@@ -260,23 +279,7 @@
             this.btnadd.TabIndex = 0;
             this.btnadd.Text = "Add";
             this.btnadd.UseVisualStyleBackColor = true;
-            // 
-            // cbxtaskname
-            // 
-            this.cbxtaskname.FormattingEnabled = true;
-            this.cbxtaskname.Location = new System.Drawing.Point(392, 3);
-            this.cbxtaskname.Name = "cbxtaskname";
-            this.cbxtaskname.Size = new System.Drawing.Size(143, 24);
-            this.cbxtaskname.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(289, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 17);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Task Name:";
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // ManageMyTimesheet
             // 
