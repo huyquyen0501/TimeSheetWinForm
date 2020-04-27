@@ -41,6 +41,7 @@ namespace TimeSheetWinForm
         #endregion
         void loaddata()
         {
+            //DayOfWeek adayofweek = DateTime.Now.DayOfWeek;
             dgvmytimesheet.DataSource = Timesheetmodel.MyTimesheets.Where(s => s.UserId == Session.UserSessionId).Select(p => new
             {
                 ID = p.Id,

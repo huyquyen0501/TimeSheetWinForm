@@ -69,6 +69,7 @@
             // 
             // dgvmytimesheet
             // 
+            this.dgvmytimesheet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvmytimesheet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvmytimesheet.Location = new System.Drawing.Point(3, 4);
             this.dgvmytimesheet.Name = "dgvmytimesheet";
