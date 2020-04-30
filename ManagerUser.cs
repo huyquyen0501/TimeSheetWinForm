@@ -114,6 +114,13 @@ namespace TimeSheetWinForm
             TimeSheetModel.SaveChanges();
             MessageBox.Show("Password has changed to '1'");
             loaddata();
+        }  
+
+        private void btnrole_Click(object sender, EventArgs e)
+        {
+            var id = long.Parse(dgvuser.SelectedCells[0].OwningRow.Cells["Id"].Value.ToString());
+            AddUserRole frm = new AddUserRole(id);
+            frm.ShowDialog();
         }
     }
 }

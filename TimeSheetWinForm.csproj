@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddUserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUserRole.Designer.cs">
+      <DependentUpon>AddUserRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Config.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </Compile>
     <Compile Include="TimeSheetModel.cs" />
     <Compile Include="Utils\Session.cs" />
+    <EmbeddedResource Include="AddUserRole.resx">
+      <DependentUpon>AddUserRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
