@@ -54,20 +54,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(208, 284);
+            this.label1.Location = new System.Drawing.Point(190, 284);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(97, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "TaskName";
+            this.label1.Text = "Tên công việc";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(532, 284);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Status";
+            this.label2.Text = "Trạng thái";
             // 
             // comboBox1
             // 

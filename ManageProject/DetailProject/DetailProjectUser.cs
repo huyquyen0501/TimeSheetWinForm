@@ -37,6 +37,7 @@ namespace TimeSheetWinForm.ManageProject.DetailProject
                 comboBox1.Invalidate();
                 comboBox1.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
                 comboBox2.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+                //Dang o day
             }
             catch (Exception ex)
             {
