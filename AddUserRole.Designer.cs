@@ -99,6 +99,7 @@
             this.btndelete.TabIndex = 3;
             this.btndelete.Text = "Delete Roles";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnadd
             // 

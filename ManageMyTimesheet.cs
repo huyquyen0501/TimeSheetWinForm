@@ -252,7 +252,7 @@ namespace TimeSheetWinForm
             foreach (var a in status)
             {
                 MyTimesheet status1 = Timesheetmodel.MyTimesheets.Where(s => s.Id == a).FirstOrDefault();
-                status1.Status = StatusEnum.TimesheetStatus.Approve;
+                status1.Status = StatusEnum.TimesheetStatus.Pending;
                 Timesheetmodel.SaveChanges();
             }
             MessageBox.Show("Sent to Project Manager");
