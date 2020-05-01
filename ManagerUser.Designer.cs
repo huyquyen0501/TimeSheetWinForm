@@ -30,6 +30,11 @@
         {
             this.dgvuser = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnrole = new System.Windows.Forms.Button();
+            this.btnmk = new System.Windows.Forms.Button();
+            this.btnxoa = new System.Windows.Forms.Button();
+            this.btnsua = new System.Windows.Forms.Button();
+            this.btnthem = new System.Windows.Forms.Button();
             this.dateNgaysinh = new System.Windows.Forms.DateTimePicker();
             this.txtDiachi = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
@@ -42,16 +47,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.Label();
-            this.btnthem = new System.Windows.Forms.Button();
-            this.btnsua = new System.Windows.Forms.Button();
-            this.btnxoa = new System.Windows.Forms.Button();
-            this.btnmk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvuser)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvuser
             // 
+            this.dgvuser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvuser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvuser.Location = new System.Drawing.Point(13, 12);
             this.dgvuser.Name = "dgvuser";
@@ -62,6 +64,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnrole);
             this.panel1.Controls.Add(this.btnmk);
             this.panel1.Controls.Add(this.btnxoa);
             this.panel1.Controls.Add(this.btnsua);
@@ -78,42 +81,93 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.Id);
-            this.panel1.Location = new System.Drawing.Point(13, 312);
+            this.panel1.Location = new System.Drawing.Point(10, 312);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(981, 229);
             this.panel1.TabIndex = 1;
             // 
+            // btnrole
+            // 
+            this.btnrole.Location = new System.Drawing.Point(810, 168);
+            this.btnrole.Name = "btnrole";
+            this.btnrole.Size = new System.Drawing.Size(137, 49);
+            this.btnrole.TabIndex = 16;
+            this.btnrole.Text = "\r\nRole manage\n";
+            this.btnrole.UseVisualStyleBackColor = true;
+            this.btnrole.Click += new System.EventHandler(this.btnrole_Click);
+            // 
+            // btnmk
+            // 
+            this.btnmk.Location = new System.Drawing.Point(409, 172);
+            this.btnmk.Name = "btnmk";
+            this.btnmk.Size = new System.Drawing.Size(137, 49);
+            this.btnmk.TabIndex = 15;
+            this.btnmk.Text = "Re-issue the password";
+            this.btnmk.UseVisualStyleBackColor = true;
+            this.btnmk.Click += new System.EventHandler(this.btnmk_Click);
+            // 
+            // btnxoa
+            // 
+            this.btnxoa.Location = new System.Drawing.Point(609, 172);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(137, 49);
+            this.btnxoa.TabIndex = 14;
+            this.btnxoa.Text = "Deleted";
+            this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
+            // 
+            // btnsua
+            // 
+            this.btnsua.Location = new System.Drawing.Point(204, 172);
+            this.btnsua.Name = "btnsua";
+            this.btnsua.Size = new System.Drawing.Size(137, 45);
+            this.btnsua.TabIndex = 13;
+            this.btnsua.Text = "Edit";
+            this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
+            // 
+            // btnthem
+            // 
+            this.btnthem.Location = new System.Drawing.Point(16, 172);
+            this.btnthem.Name = "btnthem";
+            this.btnthem.Size = new System.Drawing.Size(137, 45);
+            this.btnthem.TabIndex = 12;
+            this.btnthem.Text = "Add";
+            this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
+            // 
             // dateNgaysinh
             // 
-            this.dateNgaysinh.Location = new System.Drawing.Point(497, 62);
+            this.dateNgaysinh.Location = new System.Drawing.Point(442, 66);
             this.dateNgaysinh.Name = "dateNgaysinh";
             this.dateNgaysinh.Size = new System.Drawing.Size(199, 22);
             this.dateNgaysinh.TabIndex = 11;
+            this.dateNgaysinh.Value = new System.DateTime(2020, 4, 8, 10, 31, 57, 0);
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(497, 139);
+            this.txtDiachi.Location = new System.Drawing.Point(819, 72);
             this.txtDiachi.Name = "txtDiachi";
-            this.txtDiachi.Size = new System.Drawing.Size(199, 22);
+            this.txtDiachi.Size = new System.Drawing.Size(158, 22);
             this.txtDiachi.TabIndex = 10;
             // 
             // txtusername
             // 
-            this.txtusername.Location = new System.Drawing.Point(497, 0);
+            this.txtusername.Location = new System.Drawing.Point(92, 68);
             this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(199, 22);
+            this.txtusername.Size = new System.Drawing.Size(181, 22);
             this.txtusername.TabIndex = 9;
             // 
             // txtten
             // 
-            this.txtten.Location = new System.Drawing.Point(72, 141);
+            this.txtten.Location = new System.Drawing.Point(819, 4);
             this.txtten.Name = "txtten";
-            this.txtten.Size = new System.Drawing.Size(199, 22);
+            this.txtten.Size = new System.Drawing.Size(158, 22);
             this.txtten.TabIndex = 2;
             // 
             // txtho
             // 
-            this.txtho.Location = new System.Drawing.Point(72, 65);
+            this.txtho.Location = new System.Drawing.Point(442, 9);
             this.txtho.Name = "txtho";
             this.txtho.Size = new System.Drawing.Size(199, 22);
             this.txtho.TabIndex = 1;
@@ -121,110 +175,70 @@
             // txtid
             // 
             this.txtid.Enabled = false;
-            this.txtid.Location = new System.Drawing.Point(72, 0);
+            this.txtid.Location = new System.Drawing.Point(92, 0);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(199, 22);
+            this.txtid.Size = new System.Drawing.Size(181, 22);
             this.txtid.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(391, 144);
+            this.label5.Location = new System.Drawing.Point(749, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Địa chỉ";
+            this.label5.Text = "Address:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(391, 68);
+            this.label4.Location = new System.Drawing.Point(346, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 17);
+            this.label4.Size = new System.Drawing.Size(90, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Ngày sinh";
+            this.label4.Text = "Date of birth:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(389, 3);
+            this.label3.Location = new System.Drawing.Point(9, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Username";
+            this.label3.Text = "Username:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 146);
+            this.label2.Location = new System.Drawing.Point(749, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 17);
+            this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Tên";
+            this.label2.Text = "Name:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 68);
+            this.label1.Location = new System.Drawing.Point(346, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 17);
+            this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Họ";
+            this.label1.Text = "Surname:";
             // 
             // Id
             // 
             this.Id.AutoSize = true;
             this.Id.Location = new System.Drawing.Point(13, 4);
             this.Id.Name = "Id";
-            this.Id.Size = new System.Drawing.Size(21, 17);
+            this.Id.Size = new System.Drawing.Size(25, 17);
             this.Id.TabIndex = 0;
-            this.Id.Text = "ID";
-            // 
-            // btnthem
-            // 
-            this.btnthem.Location = new System.Drawing.Point(828, 4);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(137, 41);
-            this.btnthem.TabIndex = 12;
-            this.btnthem.Text = "Thêm";
-            this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
-            // 
-            // btnsua
-            // 
-            this.btnsua.Location = new System.Drawing.Point(828, 62);
-            this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(137, 41);
-            this.btnsua.TabIndex = 13;
-            this.btnsua.Text = "Sửa";
-            this.btnsua.UseVisualStyleBackColor = true;
-            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
-            // 
-            // btnxoa
-            // 
-            this.btnxoa.Location = new System.Drawing.Point(828, 175);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(137, 41);
-            this.btnxoa.TabIndex = 14;
-            this.btnxoa.Text = "Xóa";
-            this.btnxoa.UseVisualStyleBackColor = true;
-            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
-            // 
-            // btnmk
-            // 
-            this.btnmk.Location = new System.Drawing.Point(828, 120);
-            this.btnmk.Name = "btnmk";
-            this.btnmk.Size = new System.Drawing.Size(137, 41);
-            this.btnmk.TabIndex = 15;
-            this.btnmk.Text = "Cấp lại mật khẩu";
-            this.btnmk.UseVisualStyleBackColor = true;
-            this.btnmk.Click += new System.EventHandler(this.btnmk_Click);
+            this.Id.Text = "ID:";
             // 
             // ManagerUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 553);
+            this.ClientSize = new System.Drawing.Size(999, 545);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvuser);
             this.Name = "ManagerUser";
@@ -257,5 +271,6 @@
         private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.Button btnmk;
+        private System.Windows.Forms.Button btnrole;
     }
 }
