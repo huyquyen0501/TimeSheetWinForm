@@ -23,12 +23,6 @@ namespace TimeSheetWinForm
         #region
         TimeSheetModel TimeSheetModel = new TimeSheetModel();
         UserRole userrole = new UserRole();
-        public class listdata
-        {
-            public string username { get; set; }
-            public string namerole { get; set; }
-        }
-        List<listdata> dataa = new List<listdata>();
         #endregion
 
         private void AddUserRole_Load(object sender, EventArgs e)
