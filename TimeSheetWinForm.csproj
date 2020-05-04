@@ -186,6 +186,10 @@
     <Compile Include="ManageTimesheetStatic.Designer.cs">
       <DependentUpon>ManageTimesheetStatic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005040637338_initialize.cs" />
+    <Compile Include="Migrations\202005040637338_initialize.designer.cs">
+      <DependentUpon>202005040637338_initialize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Program.cs" />
@@ -245,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageTimesheetStatic.resx">
       <DependentUpon>ManageTimesheetStatic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005040637338_initialize.resx">
+      <DependentUpon>202005040637338_initialize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
