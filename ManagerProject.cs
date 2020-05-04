@@ -26,7 +26,7 @@ namespace TimeSheetWinForm
             var projectShowed = TimeSheetModel.ProjectUsers
                 .Where(s => Session.RoleNameOfUser.Contains("Admin") || Session.RoleNameOfUser.Contains("ProjectAdmin") || s.UserId == Session.UserSessionId)
                 .Select(s => s.ProjectId);
-            dataGridView1.DataSource = TimeSheetModel.Projects.Where(s => projectShowed.Contains(s.Id))
+            dataGridView1.DataSource = TimeSheetModel.Projects.Where(s => projectShowed.Contains(s.Id) && s.IsDeleted == false)
                 .Select(s => new
                 {
                     s.Id,
@@ -84,10 +84,20 @@ namespace TimeSheetWinForm
 
         private void button8_Click(object sender, EventArgs e)
         {
-        }
-
-        private void button8_Click_1(object sender, EventArgs e)
-        {
+            long projectId = 0;
+            var isValidId = long.TryParse(textBox1.Text, out projectId);
+            if (isValidId)
+            {
+                var project = from p in TimeSheetModel.Projects
+                              where p.Id == projectId
+                              select p;
+                if (project != null)
+                    Loaddata();
+                else
+                    MessageBox.Show("Khong ton tai project");
+            }
+            else
+                MessageBox.Show("Id khong hop le");
 
         }
 
@@ -131,6 +141,34 @@ namespace TimeSheetWinForm
             else
             {
                 MessageBox.Show("Form đang chạy, vui lòng đóng lại trước khi mở form mới");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ProjectId = long.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            var hasTimesheet = TimeSheetModel.MyTimesheets.Any(t => t.ProjectTask.ProjectId == ProjectId);
+            if (hasTimesheet)
+                MessageBox.Show("Khong the xoa project vi co ton tai timesheet ");
+            else
+            {
+                var projectTask = from pt in TimeSheetModel.ProjectTasks
+                                  where pt.ProjectId == ProjectId
+                                  select pt;
+                foreach (var pt in projectTask)           
+                    pt.IsDeleted = true;
+
+                var projectUser = from pu in TimeSheetModel.ProjectUsers
+                                  where pu.ProjectId == ProjectId
+                                  select pu;
+                foreach (var pu in projectUser)
+                    pu.IsDeleted = true;
+                var project = (from p in TimeSheetModel.Projects
+                              where p.Id == ProjectId
+                              select p).FirstOrDefault();
+                project.IsDeleted = true;
+                TimeSheetModel.SaveChanges();
+                Loaddata();
             }
         }
     }
