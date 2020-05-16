@@ -113,7 +113,6 @@ namespace TimeSheetWinForm
             MessageBox.Show("Sent ");
             loaddata(StatusEnum.TimesheetStatus.Approve);
             //ManagerTimesheet_Load(sender, e);
-
         }
 
         private void btnreject_Click(object sender, EventArgs e)
